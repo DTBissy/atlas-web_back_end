@@ -1,5 +1,6 @@
 import { createUser } from "./util"
 import { uploadPhoto } from "./util"
+import "jest"
 
 export default function handleProfileSignup() {
   return Promise.all([createUser(), uploadPhoto()])
