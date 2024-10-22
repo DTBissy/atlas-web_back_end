@@ -4,4 +4,4 @@ export default function getResponseFromAPI() {
       resolve('Success');
     }, 1000);
   });
-};
+}
