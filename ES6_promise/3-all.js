@@ -6,9 +6,14 @@ export default function handleProfileSignup() {
      * by the order asked to be received in below. Making the data avalibale in both accessible
      * in the console.log.
      */
-    .then(results => {
-      let [user, photo] = results;
-      console.log(`${photo.body} ${user.firstName} ${user.lastName}`);
+    .then((results) => {
+      let body = results.body;
+      createUser()
+        .then((results) => {
+          let firstName = firstName;
+          let lastName = lastName;
+          console.log(`${body} ${firstName} ${lastName}`);
+        })
+        .catch(() => console.log('Signup system offline'));
     })
-    .catch(() => new Error(('Signup system offline')))
 }
