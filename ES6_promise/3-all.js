@@ -1,7 +1,7 @@
-import { createUser, uploadPhoto } from "./util"
+import { createUser, uploadPhoto } from "./utils"
 
 export default function handleProfileSignup() {
-  return uploadPhoto()
+  return (uploadPhoto())
     .then((results) => {
       let photo = results.body
       createUser()
