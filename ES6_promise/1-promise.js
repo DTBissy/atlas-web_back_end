@@ -5,4 +5,4 @@ export default function getFullResponseFromAPI(success) {
     else
       reject("The fake API is not working currently");
   });
-};
+}
