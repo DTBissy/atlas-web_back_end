@@ -1,6 +1,4 @@
-import { createUser } from "./util"
-import { uploadPhoto } from "./util"
-import "jest"
+import { createUser, uploadPhoto } from "./util"
 
 export default function handleProfileSignup() {
   return Promise.all([createUser(), uploadPhoto()])
