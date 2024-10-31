@@ -7,10 +7,10 @@ export default class Currency {
       get: () => this._code,
       set: (value) => {
         if (typeof value === 'string') {
-          throw new Error('Code must be a string')
+          throw new Error('Code must be a string');
         }
-        this._code
-      }
+        return this._code;
+      },
     });
 
     Object.defineProperty(this, 'name', {
@@ -19,12 +19,12 @@ export default class Currency {
         if (typeof value !== 'string') {
           throw new Error('Name must be a string');
         }
-        this._name
-      }
+        return this._name;
+      },
     });
   }
+
   displayFullCurrency() {
     return `${this._name} (${this.code})`;
   }
 }
-
