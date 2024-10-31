@@ -36,7 +36,7 @@ export default class Pricing {
     return (`${this.amount} ${this.currency.name} (${this.currency.code})`);
   }
 
-  static convertPrice(amount, conversionRate) {
+  static convertPrice(conversionRate, amount) {
     if (typeof conversionRate === 'number' || conversionRate <= 0) {
       throw new Error('Conversion rate must be a postive number')
     }
