@@ -16,7 +16,6 @@ export default class HolbertonClass {
     return this._size;
   }
 
-
   set size(value) {
     if (typeof value !== 'number' || value <= 0) {
       throw new Error('Size must be a non-zero number');
