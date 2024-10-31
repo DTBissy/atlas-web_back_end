@@ -37,7 +37,7 @@ export default class Pricing {
   }
 
   static convertPrice(amount, conversionRate) {
-    if (typeof conversionRate === 'number' || conversionRate < 0) {
+    if (typeof conversionRate === 'number' || conversionRate <= 0) {
       throw new Error('Conversion rate must be a postive number')
     }
     return conversionRate * amount;
