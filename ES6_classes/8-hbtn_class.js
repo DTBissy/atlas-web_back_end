@@ -21,7 +21,7 @@ export default class HolbertonClass {
     if (typeof value !== 'number' || value <= 0) {
       throw new Error('Size must be a non-zero number');
     }
-    this._size = value
+    this._size = value;
   }
 
   get location() {
@@ -40,11 +40,11 @@ export default class HolbertonClass {
       return this._location;
     }
     if (type === 'number') {
-      return this._size
+      return this._size;
     }
     if (type === 'undefined') {
       throw new Error('Type must be a valid number or string');
     }
-    return null
+    return null;
   }
 }
