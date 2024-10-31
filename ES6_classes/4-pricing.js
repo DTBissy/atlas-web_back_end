@@ -3,6 +3,10 @@ import Currency from "./3-currency";
 export default class Pricing {
   constructor(amount, currency) {
     this._amount = amount;
+
+    if (!(currency instanceof Currency)) {
+      throw new Error(`Must be an instance of currency`)
+    }
     this._currency = currency;
 
     Object.defineProperty(this, 'amount', {
@@ -18,12 +22,24 @@ export default class Pricing {
 
     Object.defineProperty(this, 'currency', {
       get: () => this._currency,
-      set: () => this._currency
+      set: () => {
+        if (typeof value instanceof Currency) {
+          this._currency
+        } else {
+          throw new Error(`Must be an instance of currency`)
+        }
+      }
     });
   }
 
   displayFullPrice() {
-    return `${}`
+    return (`${this.amount} ${this.currency.name} (${this.currency.code})`);
   }
 
+  static convertPrice(amount, conversionRate) {
+    if (typeof conversionRate === 'number' || conversionRate < 0) {
+      throw new Error('Conversion rate must be a postive number')
+    }
+    return conversionRate * amount;
+  }
 }
