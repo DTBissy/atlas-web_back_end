@@ -29,24 +29,24 @@ export default class HolbertonCourse {
     return this._students;
   }
 
-  set name(newName) {
-    if (typeof newName !== 'string' || newName.trim().length === 0) {
+  set name(value) {
+    if (typeof value !== 'string' || value.trim().length === 0) {
       throw new Error('Name must be a non-empty string');
     }
-    this._name = newName;
+    this._name = value;
   }
 
-  set length(newLength) {
-    if (typeof newLength !== 'number' || newLength <= 0) {
+  set length(value) {
+    if (typeof value !== 'number' || value <= 0) {
       throw new Error('Length must be a positive number');
     }
-    this._length = newLength;
+    this._length = value;
   }
 
-  set students(newStudents) {
-    if (!Array.isArray(newStudents) || newStudents.some((student) => typeof student !== 'string' || student.trim().length === 0)) {
+  set students(value) {
+    if (!Array.isArray(value) || value.some((student) => typeof student !== 'string' || student.trim().length === 0)) {
       throw new Error('Students must be an array with non empty strings');
     }
-    this._students = newStudents;
+    this._students = value;
   }
 }
