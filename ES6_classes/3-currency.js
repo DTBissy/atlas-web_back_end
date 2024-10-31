@@ -9,7 +9,7 @@ export default class Currency {
         if (typeof value === 'string') {
           throw new Error('Code must be a string');
         }
-        return this._code;
+        this._code = value;
       },
     });
 
@@ -19,7 +19,7 @@ export default class Currency {
         if (typeof value !== 'string') {
           throw new Error('Name must be a string');
         }
-        return this._name;
+        this._name = value;
       },
     });
   }
