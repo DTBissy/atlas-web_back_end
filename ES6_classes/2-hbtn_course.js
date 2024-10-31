@@ -21,14 +21,6 @@ export default class HolbertonCourse {
     return this._name;
   }
 
-  get length() {
-    return this._length;
-  }
-
-  get students() {
-    return this._students;
-  }
-
   set name(value) {
     if (typeof value !== 'string' || value.trim().length === 0) {
       throw new Error('Name must be a non-empty string');
@@ -36,11 +28,20 @@ export default class HolbertonCourse {
     this._name = value;
   }
 
+  get length() {
+    return this._length;
+  }
+
   set length(value) {
     if (typeof value !== 'number' || value <= 0) {
       throw new Error('Length must be a positive number');
     }
     this._length = value;
+  }
+
+
+  get students() {
+    return this._students;
   }
 
   set students(value) {
