@@ -1,11 +1,11 @@
-import Currency from "./3-currency";
+import Currency from './3-currency';
 
 export default class Pricing {
   constructor(amount, currency) {
     this._amount = amount;
 
     if (!(currency instanceof Currency)) {
-      throw new Error(`Must be an instance of currency`);
+      throw new Error('Must be an instance of currency');
     }
     this._currency = currency;
 
@@ -17,7 +17,7 @@ export default class Pricing {
         } else {
           throw new Error('Amount must be a number');
         }
-      }
+      },
     });
 
     Object.defineProperty(this, 'currency', {
@@ -28,7 +28,7 @@ export default class Pricing {
         } else {
           throw new Error('Must be an instance of currency');
         }
-      }
+      },
     });
   }
 
@@ -38,7 +38,7 @@ export default class Pricing {
 
   static convertPrice(conversionRate, amount) {
     if (typeof conversionRate === 'number' && conversionRate > 0) {
-      return (conversionRate * 100) * amount / 100;
+      (conversionRate * 100) * amount / 100;
     } else {
       throw new Error('Conversion rate must be a positive number');
     }
