@@ -1,4 +1,4 @@
-import Currency from "./3-currency";
+import Currency from './3-currency';
 
 export default class Pricing {
   constructor(amount, currency) {
@@ -28,7 +28,7 @@ export default class Pricing {
         } else {
           throw new Error('Must be an instance of currency');
         }
-      }
+      },
     });
   }
 
