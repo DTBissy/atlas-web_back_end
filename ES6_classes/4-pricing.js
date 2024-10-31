@@ -1,4 +1,4 @@
-import Currency from './3-currency';
+import Currency from "./3-currency";
 
 export default class Pricing {
   constructor(amount, currency) {
@@ -28,7 +28,7 @@ export default class Pricing {
         } else {
           throw new Error('Must be an instance of currency');
         }
-      },
+      }
     });
   }
 
@@ -38,9 +38,8 @@ export default class Pricing {
 
   static convertPrice(conversionRate, amount) {
     if (typeof conversionRate === 'number' && conversionRate > 0) {
-      (conversionRate * 100) * amount / 100;
-    } else {
-      throw new Error('Conversion rate must be a positive number');
+      return ((conversionRate * 100) * amount) / 100;
     }
+    throw new Error('Conversion rate must be a positive number');
   }
 }
