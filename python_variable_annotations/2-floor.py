@@ -3,7 +3,6 @@
 import math
 
 
-
 def floor(n: float) -> int:
     """Returns the lowest rounded num of n """
     return math.floor(n)
