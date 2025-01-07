@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-import math
 """Uses math library for floor calculation"""
+import math
+
 
 
 def floor(n: float) -> int:
