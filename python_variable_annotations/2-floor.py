@@ -3,6 +3,6 @@ import math
 """Uses math library for floor calculation"""
 
 
-def floor(n: float):
+def floor(n: float) -> int:
     """Returns the lowest rounded num of n """
     return math.floor(n)
