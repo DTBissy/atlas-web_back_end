@@ -2,7 +2,6 @@
 """Will display a asynchronous function max delay"""
 import asyncio
 import random
-from typing import *
 
 
 async def wait_random(max_delay: int = 10) -> float:
