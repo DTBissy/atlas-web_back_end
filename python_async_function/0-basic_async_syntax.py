@@ -5,14 +5,8 @@ import random
 from typing import *
 
 
-async def wait_random(max_delay: Union[int, float] = 10) :
+async def wait_random(max_delay: Union[int, float] = 10) -> float :
+    """Uses async to find to delay"""
     delay = random.uniform(0, max_delay)
     await asyncio.sleep(delay)
     return delay
-
-async def main():
-    await wait_random()
-
-
-# if __name__ == "__main__":
-#     asyncio.run(main())
