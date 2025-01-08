@@ -11,9 +11,8 @@ async def wait_random(max_delay: Union[int, float] = 10) :
     return delay
 
 async def main():
-    print("Running wait random functions")
     await wait_random()
 
 
-if __name__ == "__main__":
-    asyncio.run(main())
+# if __name__ == "__main__":
+#     asyncio.run(main())
