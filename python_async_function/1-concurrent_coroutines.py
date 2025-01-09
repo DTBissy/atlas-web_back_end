@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Will display a asynchronous function max delay and max ns"""
 import asyncio
-from typing import *
+from typing import List
 wait_random = __import__("0-basic_async_syntax").wait_random
 
 
