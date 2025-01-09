@@ -8,4 +8,4 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
     """Made a asyncio task that does a asyncio function
     i just typed it in and it worked, I love python and i
     blow my self away"""
-    return asyncio.create_task(asyncio.sleep(max_delay))
+    return asyncio.create_task(wait_random(max_delay))
