@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""This is a function to run 4 parellel
+comprehensions"""
+
 import asyncio
 import time
 
