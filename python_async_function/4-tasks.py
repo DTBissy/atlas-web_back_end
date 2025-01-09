@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Will display a asynchronous function max delay and max ns"""
 import asyncio
-from typing import *
+from typing import List
 task_wait_random = __import__("3-tasks").task_wait_random
 
 
@@ -15,5 +15,4 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
     for task in asyncio.as_completed(tasks):
         result = await task
         results.append(result)
-
     return results
