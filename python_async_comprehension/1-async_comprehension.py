@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """This will collect 10 random numbs using
 async generator"""
+
 ag = __import__("0-async_generator").async_generator
 
 
