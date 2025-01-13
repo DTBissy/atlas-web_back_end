@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from typing import List
 """This will collect 10 random numbs using
 async generator"""
+from typing import List
 
 ag = __import__("0-async_generator").async_generator
 
