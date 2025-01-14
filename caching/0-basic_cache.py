@@ -16,7 +16,7 @@ class BasicCache(BaseCaching):
     def put(self, key: str, item: str) -> Dict[str, str]:
         """This function updates the dicitonary
         with a key, item value"""
-        if (key, item) == None:
+        if {key, item} == None:
             return None
         else:
             add = self.cache_data[key] = item
@@ -25,6 +25,6 @@ class BasicCache(BaseCaching):
     def get(self, key: str) -> str:
         """This function prints the entered key"""
         if key == None:
-            return {}
+            return None
         else:
             return self.cache_data.get(key)
