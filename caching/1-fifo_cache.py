@@ -18,7 +18,7 @@ class FIFOCache(BaseCaching):
         if key is None or item is None:
             return None
         else:
-            add = self.cache_data[key, item]
+            add = self.cache_data[key] = item
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 del self.cache_data[0]
                 return add
