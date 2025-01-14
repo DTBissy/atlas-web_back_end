@@ -18,12 +18,13 @@ class FIFOCache(BaseCaching):
         add = self.cache_data[key] = item
         if key == None or item == None:
             return None
-        elif len(self.cache_data) > BaseCaching.MAX_ITEMS:
+        else:
+            if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 fo = list(self.cache_data.keys())[0]
                 print(f"Discard {fo}")
                 del self.cache_data[fo]
                 return self.cache_data
-        else:
+            else:
                 return add
 
     def get(self, key: str) -> str:
