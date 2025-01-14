@@ -17,7 +17,7 @@ class BasicCache(BaseCaching):
         """This function updates the dicitonary
         with a key, item value"""
         if (key, item) == None:
-            return {}
+            return None
         else:
             add = self.cache_data[key] = item
             return add
