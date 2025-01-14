@@ -21,7 +21,7 @@ class FIFOCache(BaseCaching):
             add = self.cache_data[key] = item
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 fo = list(self.cache_data.keys())[0]
-                print(f"Discard {fo}")
+                print(f"DISCARD: {fo}")
                 del self.cache_data[fo]
                 return self.cache_data
             else:
