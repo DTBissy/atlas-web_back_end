@@ -24,7 +24,7 @@ class BasicCache(BaseCaching):
 
     def get(self, key: str) -> str:
         """This function prints the entered key"""
-        if key == None:
+        if key is None:
             return None
         else:
             return self.cache_data.get(key)

@@ -15,7 +15,7 @@ class FIFOCache(BaseCaching):
         """This will update the dictionary
         - if the dict is bigger than the max numbers
         it will delete the first key"""
-        if key == None or item == None:
+        if key is None or item is None:
             return None
         else:
             add = self.cache_data[key] = item
