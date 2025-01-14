@@ -16,7 +16,7 @@ class FIFOCache(BaseCaching):
         - if the dict is bigger than the max numbers
         it will delete the first key"""
         add = self.cache_data[key] = item
-        if key is None or item is None:
+        if key == None or item == None:
             return None
         elif len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 fo = list(self.cache_data.keys())[0]
@@ -28,7 +28,7 @@ class FIFOCache(BaseCaching):
 
     def get(self, key: str) -> str:
         """This function prints the entered key"""
-        if key == None:
+        if key is None:
             return None
         else:
             return self.cache_data.get(key)
