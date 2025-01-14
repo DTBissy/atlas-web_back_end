@@ -15,14 +15,15 @@ class FIFOCache(BaseCaching):
         """This will update the dictionary
         - if the dict is bigger than the max numbers
         it will delete the first key"""
+        add = self.cache_data[key] = item
         if key is None or item is None:
             return None
+        elif len(self.cache_data) > BaseCaching.MAX_ITEMS:
+                fo = list(self.cache_data.keys())[0]
+                print(f"Discard {fo}")
+                del self.cache_data[fo]
+                return self.cache_data
         else:
-            add = self.cache_data[key] = item
-            if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                del self.cache_data[0]
-                return add
-            else:
                 return add
 
     def get(self, key: str) -> str:
