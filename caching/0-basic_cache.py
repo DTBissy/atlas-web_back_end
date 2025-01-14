@@ -5,7 +5,10 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """This class is inherited from base_caching"""
+    """This class is inherited from base_caching,
+    Its a basic cache so all it will do is update
+    the cache dictionary and return to me data representing
+    the caches state"""
     def __init__(self):
         super().__init__()
 
