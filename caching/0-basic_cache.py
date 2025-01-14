@@ -2,6 +2,7 @@
 """This will inheirt from base_caching.
 It will add cached items to a dictionary."""
 from base_caching import BaseCaching
+from typing import Dict
 
 
 class BasicCache(BaseCaching):
@@ -12,14 +13,17 @@ class BasicCache(BaseCaching):
     def __init__(self):
         super().__init__()
 
-    def put(self, key, item):
+    def put(self, key: str, item: str) -> Dict[str, str]:
+        """This function updates the dicitonary
+        with a key, item value"""
         if (key, item) == None:
             return {}
         else:
             add = self.cache_data[key] = item
             return add
 
-    def get(self, key):
+    def get(self, key: str) -> str:
+        """This function prints the entered key"""
         if key == None:
             return {}
         else:
