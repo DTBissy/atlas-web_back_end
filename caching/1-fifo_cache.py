@@ -10,26 +10,19 @@ class FIFOCache(BaseCaching):
     algorithms to mangage the caching process"""
     def __init__(self):
         super().__init__()
+        self.queue = []
 
-    def put(self, key: str, item: str) -> Dict[str, str]:
-        """This will update the dictionary
-        - if the dict is bigger than the max numbers
-        it will delete the first key"""
-        if key is None or item is None:
-            return None
-        else:
-            add = self.cache_data[key] = item
-            if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                fo = list(self.cache_data.keys())[0]
-                print(f"DISCARD: {fo}")
-                del self.cache_data[fo]
-                return self.cache_data
-            else:
-                return add
+    def get(self, key):
+        if key in self.cache_data:
+            return self.cache_data[key]
+        return False
 
-    def get(self, key: str) -> str:
-        """This function prints the entered key"""
-        if key is None:
-            return None
-        else:
-            return self.cache_data.get(key)
+    def put(self, key:str , item: str) -> Dict[str,str]:
+        """Updates the caching process using Last in
+        First out"""
+        if key not in self.cache_data:
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+                oldest_key = self.queue.pop(0)
+                del self.cache_data[oldest_key]
+            self.queue.append(key)
+        self.cache_data[key] = item
