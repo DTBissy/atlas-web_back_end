@@ -10,6 +10,7 @@ class LIFOCache(BaseCaching):
     algorithms to mangage the caching process"""
     def __init__(self):
         super().__init__()
+        self.queue = []
 
     def put(self, key: str, item: str) -> Dict[str, str]:
         """This will update the dictionary
@@ -18,13 +19,14 @@ class LIFOCache(BaseCaching):
         if key is None or item is None:
             return None
         else:
+            self.queue.append(key)
             add = self.cache_data[key] = item
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 if self.cache_data[key] == key:
                     self.cache_data[key] = item
                 fo = list(self.cache_data.keys())[-1 - 1]
                 print(f"DISCARD: {item}")
-                del self.cache_data[fo]
+                del self.cache_data[self.queue.pop(-1 -1)]
                 return self.cache_data
             else:
                 return add
