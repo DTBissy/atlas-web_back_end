@@ -1,30 +1,37 @@
 #!/usr/bin/python3
-"""This a Last in First out
+"""This a First in Last out
 class module, which inherits basecaching"""
 from base_caching import BaseCaching
 from typing import Dict
 
 
 class LIFOCache(BaseCaching):
-    """This class will use Last In First Out
+    """This class will use First In Last Out
     algorithms to mangage the caching process"""
     def __init__(self):
         super().__init__()
-        self.queue = []
 
-    def get(self, key):
-        """This will return the cache"""
-        if key in self.cache_data:
-            return self.cache_data[key]
-        return False
+    def put(self, key: str, item: str) -> Dict[str, str]:
+        """This will update the dictionary
+        - if the dict is bigger than the max numbers
+        it will delete the last key"""
+        if key is None or item is None:
+            return None
+        else:
+            add = self.cache_data[key] = item
+            if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+                if self.cache_data[key] == key:
+                    self.cache_data[key] = item
+                fo = list(self.cache_data.keys())[-1 - 1]
+                print(f"DISCARD: {item}")
+                del self.cache_data[fo]
+                return self.cache_data
+            else:
+                return add
 
-    def put(self, key:str , item: str) -> Dict[str,str]:
-        """Updates the caching process using Last in
-        First out"""
-        if key not in self.cache_data:
-            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-                newest_key = self.queue.pop(-1)
-                print(newest_key)
-                del self.cache_data[newest_key]
-            self.queue.append(key)
-        self.cache_data[key] = item
+    def get(self, key: str) -> str:
+        """This function prints the entered key"""
+        if key is None:
+            return None
+        else:
+            return self.cache_data.get(key)
