@@ -30,7 +30,6 @@ class Server:
 
         result = self.dataset()
         start_index, end_index = pg(page, page_size)
-        print(start_index)
         if start_index >= len(result):
             return []
         return result[start_index:end_index]
