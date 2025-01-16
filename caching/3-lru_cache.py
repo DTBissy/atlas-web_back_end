@@ -18,6 +18,7 @@ class LRUCache(BaseCaching):
         else:
             return self.cache_data.get(key)
 
+
     def put(self, key: int, item: int) -> None:
         """Updates the value in the value in the
         cache using Least Recently Used algorithims"""
@@ -26,7 +27,7 @@ class LRUCache(BaseCaching):
         if item is None:
             return None
         else:
-            if len(self.cache_data) == BaseCaching.MAX_ITEMS:
+            if len(self.cache_data) == BaseCaching.MAX_ITEMS and key not in self.cache_data:
                 popped = self.cache_data.popitem(last=False)
                 print(f"DISCARD: {popped[0]}")
                 del popped  # Remove oldest item
