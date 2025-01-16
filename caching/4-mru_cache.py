@@ -28,8 +28,8 @@ class MRUCache(BaseCaching):
         if item is None:
             return None
         else:
-            if len(self.cache_data) == BaseCaching.MAX_ITEMS and key not\
-                in self.cache_data:
+            if len(self.cache_data) == BaseCaching.MAX_ITEMS and key not \
+                    in self.cache_data:
                 popped = self.cache_data.popitem(last=True)
                 print(f"DISCARD: {popped[0]}")
                 del popped  # Remove oldest item

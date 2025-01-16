@@ -16,7 +16,7 @@ class LRUCache(BaseCaching):
         """Gets the value in the cache"""
         if key in self.cache_data:
             value = self.cache_data.pop(key)
-            self.cache_data[key] = value  # Move to end to mark as recently used
+            self.cache_data[key] = value  # Move to end
             return value
         return None
 
@@ -28,8 +28,8 @@ class LRUCache(BaseCaching):
         if item is None:
             return None
         else:
-            if len(self.cache_data) == BaseCaching.MAX_ITEMS and\
-                key not in self.cache_data:
+            if len(self.cache_data) == BaseCaching.MAX_ITEMS and \
+                    key not in self.cache_data:
                 popped = self.cache_data.popitem(last=False)
                 print(f"DISCARD: {popped[0]}")
                 del popped  # Remove oldest item
