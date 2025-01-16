@@ -11,13 +11,14 @@ class LRUCache(BaseCaching):
         super().__init__()
         self.cache_data = OrderedDict()
 
-    def get(self, key: str) -> str:
-        """This function prints the entered key"""
+    def get(self, key: int) -> int:
+        """Gets the value in the cache"""
         if key is None:
             return None
         else:
-            return self.cache_data.get(key)
-
+            value = self.cache_data.pop(key)
+            self.cache_data[key] = value  # Move to end to mark as recently used
+            return value
 
     def put(self, key: int, item: int) -> None:
         """Updates the value in the value in the
