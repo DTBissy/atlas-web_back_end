@@ -16,7 +16,7 @@ class MRUCache(BaseCaching):
         """Gets the value in the cache"""
         if key in self.cache_data:
             value = self.cache_data.pop(key)
-            self.cache_data[key] = value # Move to end to mark as
+            self.cache_data[key] = value
             return value
         return None
 
@@ -32,7 +32,7 @@ class MRUCache(BaseCaching):
                     in self.cache_data:
                 popped = self.cache_data.popitem(last=True)
                 print(f"DISCARD: {popped[0]}")
-                del popped  # Remove oldest item
+                del popped
             elif key in self.cache_data:
                 self.cache_data.pop(key)
 

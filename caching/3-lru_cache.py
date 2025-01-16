@@ -16,7 +16,7 @@ class LRUCache(BaseCaching):
         """Gets the value in the cache"""
         if key in self.cache_data:
             value = self.cache_data.pop(key)
-            self.cache_data[key] = value  # Move to end
+            self.cache_data[key] = value
             return value
         return None
 
@@ -32,7 +32,7 @@ class LRUCache(BaseCaching):
                     key not in self.cache_data:
                 popped = self.cache_data.popitem(last=False)
                 print(f"DISCARD: {popped[0]}")
-                del popped  # Remove oldest item
+                del popped
             elif key in self.cache_data:
                 self.cache_data.pop(key)
 
