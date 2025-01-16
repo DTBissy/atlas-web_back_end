@@ -29,7 +29,7 @@ class LRUCache(BaseCaching):
             return None
         else:
             if len(self.cache_data) == BaseCaching.MAX_ITEMS and\
-            key not in self.cache_data:
+                key not in self.cache_data:
                 popped = self.cache_data.popitem(last=False)
                 print(f"DISCARD: {popped[0]}")
                 del popped  # Remove oldest item
