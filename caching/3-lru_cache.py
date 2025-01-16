@@ -17,7 +17,7 @@ class LRUCache(BaseCaching):
             value = self.cache_data.pop(key)
             self.cache_data[key] = value  # Move to end to mark as recently used
             return value
-        return -1
+        return None
 
     def put(self, key: int, item: int) -> None:
         """Updates the value in the value in the
