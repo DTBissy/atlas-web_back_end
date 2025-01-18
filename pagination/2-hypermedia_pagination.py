@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""This will get the page and the next page and previous page."""
 import csv
 import math
 from typing import List, Dict
