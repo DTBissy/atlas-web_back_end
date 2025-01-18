@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
 import csv
 import math
 from typing import List, Dict
@@ -49,8 +48,8 @@ class Server:
         return {
             "page_size": page_size,
             "page": page,
-            "data" : data,
-            "next_page" : next_page,
-            "prev_page" : prev_pag,
-            "total_pages" : total_pages
+            "data": data,
+            "next_page": next_page,
+            "prev_page": prev_pag,
+            "total_pages": total_pages
             }
